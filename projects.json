@@ -87,6 +87,16 @@
       "live_url": "https://ins-and-outs-2da2b.web.app"
     },
     {
+      "id": "presidido",
+      "name": "Presidido",
+      "pitch": "I wanted to explore Bootstrap, and figured building my own wedding website should be simple enough.",
+      "status": "live",
+      "theme": "relationships",
+      "stack": ["Bootstrap", "Firebase"],
+      "repo": { "url": "https://github.com/halvorson/presidido", "private": false },
+      "live_url": "https://presidido.com"
+    },
+    {
       "id": "kindling",
       "name": "Kindling",
       "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
