@@ -24,10 +24,7 @@
       "name": "BitLock",
       "pitch": "Tracks which of 1,024 combinations we've tried on a 10-button lock I still haven't cracked, shared so every attempt counts.",
       "status": "live",
-      "repo": {
-        "url": "https://github.com/halvorson/bitlock",
-        "private": true
-      },
+      "repo": { "url": "https://github.com/halvorson/bitlock", "private": false },
       "live_url": null,
       "live_note": "Deploy link stays private — it's where our one shared memory of attempted combinations actually lives, and I'm still cracking the lock.",
       "tags": ["utility", "vercel"]
@@ -37,7 +34,7 @@
       "name": "Bearings",
       "pitch": "Triangulates owls we hear in the Presidio woods on walks with my wife, by combining compass bearings from both our phones — also doubles as a \"which mountain is that\" and ski-chute finder.",
       "status": "live",
-      "repo": { "url": "https://github.com/halvorson/bearings", "private": true },
+      "repo": { "url": "https://github.com/halvorson/bearings", "private": false },
       "live_url": "https://bearings-app-dev.web.app",
       "tags": ["outdoors", "firebase", "geolocation"]
     },
@@ -46,7 +43,7 @@
       "name": "Clear Skies Ahead",
       "pitch": "The Presidio is foggier than the Mission or Marin — this points you the exact direction and distance to walk to get out of the gloom and into the sun.",
       "status": "live",
-      "repo": { "url": "https://github.com/halvorson/clear-skies-ahead", "private": true },
+      "repo": { "url": "https://github.com/halvorson/clear-skies-ahead", "private": false },
       "live_url": "https://clear-skies-ahead.web.app",
       "tags": ["outdoors", "firebase", "weather"]
     },
@@ -55,7 +52,7 @@
       "name": "Ins-and-Outs",
       "pitch": "A quick-tap tracker for a recovering dog's pills, pees, and poos, so anyone in the house can log a moment in two taps.",
       "status": "live",
-      "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": true },
+      "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": false },
       "live_url": "https://ins-and-outs-2da2b.web.app",
       "tags": ["household", "firebase"]
     },
@@ -63,14 +60,13 @@
       "id": "ask-the-stars",
       "name": "Ask the Stars",
       "pitch": "Text an AI agent over satellite SMS from places with zero cell signal — no app, no bars required.",
-      "status": "live",
+      "status": "in-progress",
       "repo": {
         "url": "https://github.com/halvorson/ask-the-stars",
         "private": true,
-        "private_reason": "Stays private — it's wired to my personal Twilio account."
+        "private_reason": "Stays private — it's wired to my personal Twilio account, and it was never successfully deployed, so I honestly don't know if it works."
       },
       "live_url": null,
-      "live_note": "SMS-based — there's no web page to link to.",
       "tags": ["ai agent", "firebase", "sms"]
     },
     {
@@ -78,7 +74,7 @@
       "name": "Kindling",
       "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
       "status": "in-progress",
-      "repo": { "url": "https://github.com/halvorson/kindling", "private": true },
+      "repo": { "url": "https://github.com/halvorson/kindling", "private": false },
       "live_url": null,
       "tags": ["relationships", "firebase"]
     },
