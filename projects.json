@@ -9,8 +9,7 @@
       "theme": "outdoors",
       "stack": ["React", "Firestore", "Mapbox"],
       "repo": { "url": "https://github.com/halvorson/bearings", "private": false },
-      "live_url": "https://bearings-app-dev.web.app",
-      "tags": ["outdoors", "firebase", "geolocation"]
+      "live_url": "https://bearings-app-dev.web.app"
     },
     {
       "id": "clear-skies-ahead",
@@ -20,19 +19,52 @@
       "theme": "outdoors",
       "stack": ["Firebase", "PWA"],
       "repo": { "url": "https://github.com/halvorson/clear-skies-ahead", "private": false },
-      "live_url": "https://clear-skies-ahead.web.app",
-      "tags": ["outdoors", "firebase", "weather"]
+      "live_url": "https://clear-skies-ahead.web.app"
+    },
+    {
+      "id": "bitlock",
+      "name": "BitLock",
+      "pitch": "The cabin we frequent has a 10-digit lockbox next to the front door, and nobody knows the combination, so built a tracker to brute force the combo (1,024 possibilities). Not sharing the live link so we don't lose our progress.",
+      "status": "live",
+      "theme": "outdoors",
+      "stack": ["Vercel", "Upstash Redis"],
+      "repo": { "url": "https://github.com/halvorson/bitlock", "private": false },
+      "live_url": null
+    },
+    {
+      "id": "ask-the-stars",
+      "name": "Ask the Stars",
+      "pitch": "Backcountry hiking and skiing puts you out of cell range right when you most want to check weather, fire, or trail conditions — this taps Apple's free satellite messaging to ask an AI agent directly, instead of hoping a friend is by their phone to relay the answer.",
+      "status": "live",
+      "theme": "outdoors",
+      "stack": ["Firebase Functions", "Twilio", "Claude API"],
+      "repo": {
+        "url": "https://github.com/halvorson/ask-the-stars",
+        "private": true,
+        "private_reason": "Private Repo - uses a personal Twilio account"
+      },
+      "live_url": null
+    },
+    {
+      "id": "spotter",
+      "name": "Spotter",
+      "pitch": "Crowdsourced, geotagged photo sharing so the great race-day photos strangers took of you actually make it back to you.",
+      "status": "in-development",
+      "theme": "outdoors",
+      "stack": ["React", "Firestore", "Tailwind"],
+      "repo": { "url": "https://github.com/halvorson/spotter", "private": true },
+      "repo_hidden": true,
+      "live_url": null
     },
     {
       "id": "teaching-toddlers-typing",
       "name": "Teaching Toddlers Typing",
-      "pitch": "A letter-matching keyboard game so my 2-year-old can \"work\" at a computer like everyone else in the house — press the matching key, no such thing as a wrong answer.",
+      "pitch": "A letter-matching keyboard game so my 2-year-old can \"work\" at a computer like everyone else in the house. MVP got rave reviews, though immediately triggered a tantrum when taking it away, so we're back to no screentime.",
       "status": "live",
       "theme": "parenting",
       "stack": ["Vite", "TypeScript"],
       "repo": { "url": "https://github.com/halvorson/teaching-toddlers-typing", "private": false },
-      "live_url": "https://halvorson.github.io/teaching-toddlers-typing/",
-      "tags": ["parenting", "static site"]
+      "live_url": "https://halvorson.github.io/teaching-toddlers-typing/"
     },
     {
       "id": "big-emotions",
@@ -42,72 +74,28 @@
       "theme": "parenting",
       "stack": ["Static HTML"],
       "repo": { "url": "https://github.com/halvorson/big-emotions", "private": false },
-      "live_url": "https://halvorson.github.io/big-emotions/",
-      "tags": ["parenting", "static site"]
+      "live_url": "https://halvorson.github.io/big-emotions/"
     },
     {
       "id": "ins-and-outs",
       "name": "Ins-and-Outs",
-      "pitch": "A quick-tap tracker for a recovering dog's pills, pees, and poos, so anyone in the house can log a moment in two taps.",
+      "pitch": "Our dog Magellan had surgery to remove a tumor, so built a communal tracker so we could coordinate on his medication, diet, and emissions.",
       "status": "live",
       "theme": "household",
       "stack": ["React", "Firestore"],
       "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": false },
-      "live_url": "https://ins-and-outs-2da2b.web.app",
-      "tags": ["household", "firebase"]
-    },
-    {
-      "id": "bitlock",
-      "name": "BitLock",
-      "pitch": "Tracks which of 1,024 combinations we've tried on a 10-button lock I still haven't cracked, shared so every attempt counts.",
-      "status": "live",
-      "theme": "utility",
-      "stack": ["Vercel", "Upstash Redis"],
-      "repo": { "url": "https://github.com/halvorson/bitlock", "private": false },
-      "live_url": null,
-      "live_note": "Deploy link stays private — it's where our one shared memory of attempted combinations actually lives, and I'm still cracking the lock.",
-      "tags": ["utility", "vercel"]
-    },
-    {
-      "id": "ask-the-stars",
-      "name": "Ask the Stars",
-      "pitch": "Backcountry hiking and skiing puts you out of cell range right when you most want to check weather, fire, or trail conditions — this taps Apple's free satellite messaging to ask an AI agent directly, instead of hoping a friend is by their phone to relay the answer.",
-      "status": "in-progress",
-      "theme": "outdoors",
-      "stack": ["Firebase Functions", "Twilio", "Claude API"],
-      "repo": {
-        "url": "https://github.com/halvorson/ask-the-stars",
-        "private": true,
-        "private_reason": "Stays private — it's wired to my personal Twilio account."
-      },
-      "live_url": null,
-      "tags": ["ai agent", "firebase", "sms"]
-    },
-    {
-      "id": "spotter",
-      "name": "Spotter",
-      "pitch": "Crowdsourced, geotagged photo sharing so the great race-day photos strangers took of you actually make it back to you.",
-      "status": "in-progress",
-      "theme": "outdoors",
-      "stack": ["React", "Firestore", "Tailwind"],
-      "repo": {
-        "url": "https://github.com/halvorson/spotter",
-        "private": true,
-        "private_reason": "Stays private for now — keeping the option open to take this one commercial."
-      },
-      "live_url": null,
-      "tags": ["outdoors", "firebase"]
+      "live_url": "https://ins-and-outs-2da2b.web.app"
     },
     {
       "id": "kindling",
       "name": "Kindling",
       "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
-      "status": "in-progress",
+      "status": "in-development",
       "theme": "relationships",
       "stack": ["React", "Firestore"],
       "repo": { "url": "https://github.com/halvorson/kindling", "private": false },
-      "live_url": null,
-      "tags": ["relationships", "firebase"]
+      "repo_hidden": true,
+      "live_url": null
     }
   ],
   "todo": []

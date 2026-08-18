@@ -31,49 +31,34 @@ async function loadProjects() {
 }
 
 function renderCard(p) {
-  const isLive = p.status === "live";
-  const statusBadge = isLive
-    ? `<span class="status live">Live</span>`
-    : `<span class="status in-progress">In progress</span>`;
+  const inProgress = p.status !== "live";
+
+  const titleText = escapeHtml(p.name);
+  const titleHtml = p.live_url
+    ? `<a class="title-link" href="${escapeHtml(p.live_url)}" target="_blank" rel="noopener" aria-label="Try ${titleText}">${titleText} →</a>`
+    : titleText;
 
   const stackPills = (p.stack || [])
     .map((s) => `<span class="pill">${escapeHtml(s)}</span>`)
     .join("");
 
-  let repoLink = "";
-  if (p.repo) {
-    const badge = p.repo.private ? `<span class="badge">private</span>` : "";
-    const repoUrl = escapeHtml(p.repo.url);
-    repoLink = `<a href="${repoUrl}" target="_blank" rel="noopener" aria-label="${escapeHtml(p.name)} repository">Repo</a> ${badge}`;
+  let githubLink = "";
+  if (p.repo && !p.repo_hidden) {
+    githubLink = ` <a class="inline-link" href="${escapeHtml(p.repo.url)}" target="_blank" rel="noopener" aria-label="${titleText} on GitHub">GitHub</a>`;
     if (p.repo.private_reason) {
-      repoLink += `<div class="note">${escapeHtml(p.repo.private_reason)}</div>`;
+      githubLink += ` (${escapeHtml(p.repo.private_reason)})`;
     }
-  } else if (p.repo_note) {
-    repoLink = `<span class="note">${escapeHtml(p.repo_note)}</span>`;
+  } else if (p.repo_note && !p.repo_hidden) {
+    githubLink = ` <span class="note">${escapeHtml(p.repo_note)}</span>`;
   }
 
-  let cta = "";
-  if (p.live_url) {
-    const liveUrl = escapeHtml(p.live_url);
-    cta = `<a class="cta" href="${liveUrl}" target="_blank" rel="noopener" aria-label="Try ${escapeHtml(p.name)}">Try it →</a>`;
-  } else if (p.live_note) {
-    cta = `<span class="note">${escapeHtml(p.live_note)}</span>`;
-  } else if (!isLive) {
-    cta = `<span class="note">Not live yet — check back soon.</span>`;
-  }
+  const prefix = inProgress ? "[In Development] " : "";
 
   return `
     <article class="card" role="listitem">
-      <div class="card-head">
-        <h3>${escapeHtml(p.name)}</h3>
-        ${statusBadge}
-      </div>
-      <p class="pitch">${escapeHtml(p.pitch)}</p>
+      <h3 class="card-title">${titleHtml}</h3>
       ${stackPills ? `<div class="stack">${stackPills}</div>` : ""}
-      <div class="meta">
-        ${cta}
-        ${repoLink}
-      </div>
+      <p class="pitch">${escapeHtml(prefix)}${escapeHtml(p.pitch)}${githubLink}</p>
     </article>
   `;
 }

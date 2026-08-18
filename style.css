@@ -59,8 +59,16 @@ header.hero .role {
 }
 
 .bio {
-  margin: 0 0 28px;
+  margin: 0 0 14px;
   font-size: 1.02rem;
+}
+
+.bio + .links {
+  margin-top: 22px;
+}
+
+.bio a {
+  color: var(--accent);
 }
 
 .links {
@@ -114,42 +122,27 @@ h2.section-title {
   padding: 18px 20px;
 }
 
-.card-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.card h3 {
-  margin: 0;
+.card-title {
+  margin: 0 0 10px;
   font-size: 1.08rem;
 }
 
-.status {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
+.card-title a.title-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
-.status.live { background: var(--accent-soft); color: var(--accent); }
-
-.status.in-progress {
-  background: var(--warn-bg);
-  color: var(--warn-text);
-  border: 1px solid var(--warn-border);
-  font-size: 0.78rem;
-  padding: 4px 12px;
-}
+.card-title a.title-link:hover { border-bottom-color: var(--accent); }
 
 .card .pitch {
   margin: 10px 0 14px;
   font-size: 0.98rem;
+}
+
+.card .pitch a.inline-link {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .stack {
@@ -164,45 +157,6 @@ h2.section-title {
   background: var(--tag-bg);
   color: var(--text-muted);
   padding: 2px 9px;
-  border-radius: 999px;
-}
-
-.card .meta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 0.88rem;
-  align-items: center;
-}
-
-.card .meta a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.card .meta a:hover { text-decoration: underline; }
-
-.card .meta .cta {
-  background: var(--accent);
-  color: var(--surface);
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-.card .meta .cta:hover { opacity: 0.88; }
-
-.card .meta .note {
-  width: 100%;
-  order: 3;
-}
-
-.badge {
-  font-size: 0.72rem;
-  background: var(--tag-bg);
-  color: var(--text-muted);
-  padding: 1px 7px;
   border-radius: 999px;
 }
 
