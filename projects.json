@@ -26,10 +26,10 @@
       "status": "live",
       "repo": {
         "url": "https://github.com/halvorson/bitlock",
-        "private": true,
-        "private_reason": "Stays private — it holds our one shared memory of attempted combinations, and I'm still actively cracking the lock."
+        "private": true
       },
-      "live_url": "https://bitlock.vercel.app",
+      "live_url": null,
+      "live_note": "Deploy link stays private — it's where our one shared memory of attempted combinations actually lives, and I'm still cracking the lock.",
       "tags": ["utility", "vercel"]
     },
     {
