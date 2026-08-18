@@ -88,8 +88,8 @@
     },
     {
       "id": "presidido",
-      "name": "Presidido",
-      "pitch": "I wanted to explore Bootstrap, and figured building my own wedding website should be simple enough.",
+      "name": "PresidIDo",
+      "pitch": "I wanted to explore Bootstrap, and figured building my own wedding website should be simple enough. The name's a play on PresidiGo (now the Presidio Go), with a nod to \"I Do.\"",
       "status": "live",
       "theme": "relationships",
       "stack": ["Bootstrap", "Firebase"],
