@@ -2,38 +2,12 @@
   "$schema": "Schema for portfolio project cards. See .claude/skills/update-projects/SKILL.md for how to add/update entries.",
   "projects": [
     {
-      "id": "teaching-toddlers-typing",
-      "name": "Teaching Toddlers Typing",
-      "pitch": "A letter-matching keyboard game so my 2-year-old can \"work\" at a computer like everyone else in the house — press the matching key, no such thing as a wrong answer.",
-      "status": "live",
-      "repo": { "url": "https://github.com/halvorson/teaching-toddlers-typing", "private": false },
-      "live_url": "https://halvorson.github.io/teaching-toddlers-typing/",
-      "tags": ["parenting", "static site"]
-    },
-    {
-      "id": "big-emotions",
-      "name": "Big Emotions",
-      "pitch": "Compares five parenting books side by side so we can decide whose philosophy we actually agree with — and know which one to read next.",
-      "status": "live",
-      "repo": { "url": "https://github.com/halvorson/big-emotions", "private": false },
-      "live_url": "https://halvorson.github.io/big-emotions/",
-      "tags": ["parenting", "static site"]
-    },
-    {
-      "id": "bitlock",
-      "name": "BitLock",
-      "pitch": "Tracks which of 1,024 combinations we've tried on a 10-button lock I still haven't cracked, shared so every attempt counts.",
-      "status": "live",
-      "repo": { "url": "https://github.com/halvorson/bitlock", "private": false },
-      "live_url": null,
-      "live_note": "Deploy link stays private — it's where our one shared memory of attempted combinations actually lives, and I'm still cracking the lock.",
-      "tags": ["utility", "vercel"]
-    },
-    {
       "id": "bearings",
       "name": "Bearings",
       "pitch": "Triangulates owls we hear in the Presidio woods on walks with my wife, by combining compass bearings from both our phones — also doubles as a \"which mountain is that\" and ski-chute finder.",
       "status": "live",
+      "theme": "outdoors",
+      "stack": ["React", "Firestore", "Mapbox"],
       "repo": { "url": "https://github.com/halvorson/bearings", "private": false },
       "live_url": "https://bearings-app-dev.web.app",
       "tags": ["outdoors", "firebase", "geolocation"]
@@ -43,49 +17,97 @@
       "name": "Clear Skies Ahead",
       "pitch": "The Presidio is foggier than the Mission or Marin — this points you the exact direction and distance to walk to get out of the gloom and into the sun.",
       "status": "live",
+      "theme": "outdoors",
+      "stack": ["Firebase", "PWA"],
       "repo": { "url": "https://github.com/halvorson/clear-skies-ahead", "private": false },
       "live_url": "https://clear-skies-ahead.web.app",
       "tags": ["outdoors", "firebase", "weather"]
+    },
+    {
+      "id": "teaching-toddlers-typing",
+      "name": "Teaching Toddlers Typing",
+      "pitch": "A letter-matching keyboard game so my 2-year-old can \"work\" at a computer like everyone else in the house — press the matching key, no such thing as a wrong answer.",
+      "status": "live",
+      "theme": "parenting",
+      "stack": ["Vite", "TypeScript"],
+      "repo": { "url": "https://github.com/halvorson/teaching-toddlers-typing", "private": false },
+      "live_url": "https://halvorson.github.io/teaching-toddlers-typing/",
+      "tags": ["parenting", "static site"]
+    },
+    {
+      "id": "big-emotions",
+      "name": "Big Emotions",
+      "pitch": "Compares five parenting books side by side so we can decide whose philosophy we actually agree with — and know which one to read next.",
+      "status": "live",
+      "theme": "parenting",
+      "stack": ["Static HTML"],
+      "repo": { "url": "https://github.com/halvorson/big-emotions", "private": false },
+      "live_url": "https://halvorson.github.io/big-emotions/",
+      "tags": ["parenting", "static site"]
     },
     {
       "id": "ins-and-outs",
       "name": "Ins-and-Outs",
       "pitch": "A quick-tap tracker for a recovering dog's pills, pees, and poos, so anyone in the house can log a moment in two taps.",
       "status": "live",
+      "theme": "household",
+      "stack": ["React", "Firestore"],
       "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": false },
       "live_url": "https://ins-and-outs-2da2b.web.app",
       "tags": ["household", "firebase"]
+    },
+    {
+      "id": "bitlock",
+      "name": "BitLock",
+      "pitch": "Tracks which of 1,024 combinations we've tried on a 10-button lock I still haven't cracked, shared so every attempt counts.",
+      "status": "live",
+      "theme": "utility",
+      "stack": ["Vercel", "Upstash Redis"],
+      "repo": { "url": "https://github.com/halvorson/bitlock", "private": false },
+      "live_url": null,
+      "live_note": "Deploy link stays private — it's where our one shared memory of attempted combinations actually lives, and I'm still cracking the lock.",
+      "tags": ["utility", "vercel"]
     },
     {
       "id": "ask-the-stars",
       "name": "Ask the Stars",
       "pitch": "Backcountry hiking and skiing puts you out of cell range right when you most want to check weather, fire, or trail conditions — this taps Apple's free satellite messaging to ask an AI agent directly, instead of hoping a friend is by their phone to relay the answer.",
       "status": "in-progress",
+      "theme": "outdoors",
+      "stack": ["Firebase Functions", "Twilio", "Claude API"],
       "repo": {
         "url": "https://github.com/halvorson/ask-the-stars",
         "private": true,
-        "private_reason": "Stays private — it's wired to my personal Twilio account, and it was never successfully deployed, so I honestly don't know if it works."
+        "private_reason": "Stays private — it's wired to my personal Twilio account."
       },
       "live_url": null,
       "tags": ["ai agent", "firebase", "sms"]
-    },
-    {
-      "id": "kindling",
-      "name": "Kindling",
-      "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
-      "status": "in-progress",
-      "repo": { "url": "https://github.com/halvorson/kindling", "private": false },
-      "live_url": null,
-      "tags": ["relationships", "firebase"]
     },
     {
       "id": "spotter",
       "name": "Spotter",
       "pitch": "Crowdsourced, geotagged photo sharing so the great race-day photos strangers took of you actually make it back to you.",
       "status": "in-progress",
-      "repo": { "url": "https://github.com/halvorson/spotter", "private": true },
+      "theme": "outdoors",
+      "stack": ["React", "Firestore", "Tailwind"],
+      "repo": {
+        "url": "https://github.com/halvorson/spotter",
+        "private": true,
+        "private_reason": "Stays private for now — keeping the option open to take this one commercial."
+      },
       "live_url": null,
       "tags": ["outdoors", "firebase"]
+    },
+    {
+      "id": "kindling",
+      "name": "Kindling",
+      "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
+      "status": "in-progress",
+      "theme": "relationships",
+      "stack": ["React", "Firestore"],
+      "repo": { "url": "https://github.com/halvorson/kindling", "private": false },
+      "live_url": null,
+      "tags": ["relationships", "firebase"]
     }
   ],
   "todo": []
