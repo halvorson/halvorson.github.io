@@ -1,13 +1,18 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 async function loadProjects() {
-  const projectsEl = document.getElementById("projects");
+  const outdoorsEl = document.getElementById("projects-outdoors");
+  const familyEl = document.getElementById("projects-family");
   try {
     const res = await fetch("projects.json");
     if (!res.ok) throw new Error(`projects.json responded ${res.status}`);
     const data = await res.json();
 
-    projectsEl.innerHTML = data.projects.map(renderCard).join("");
+    const outdoors = data.projects.filter((p) => p.theme === "outdoors");
+    const family = data.projects.filter((p) => p.theme !== "outdoors");
+
+    outdoorsEl.innerHTML = outdoors.map(renderCard).join("");
+    familyEl.innerHTML = family.map(renderCard).join("");
 
     const todoSection = document.getElementById("todo-section");
     if (data.todo && data.todo.length) {
@@ -17,9 +22,11 @@ async function loadProjects() {
     }
   } catch (err) {
     console.error("Failed to load projects.json", err);
-    projectsEl.innerHTML =
+    const fallback =
       `<p class="note">Couldn't load the project list right now — try refreshing, or see
        <a href="https://github.com/halvorson" target="_blank" rel="noopener">GitHub</a> directly.</p>`;
+    outdoorsEl.innerHTML = fallback;
+    familyEl.innerHTML = "";
   }
 }
 
