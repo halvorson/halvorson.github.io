@@ -135,6 +135,11 @@ h2.section-title {
 
 .card-title a.title-link:hover { border-bottom-color: var(--accent); }
 
+.link-icon {
+  vertical-align: -1px;
+  margin-left: 1px;
+}
+
 .card .pitch {
   margin: 10px 0 14px;
   font-size: 0.98rem;
