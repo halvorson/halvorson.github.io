@@ -1,18 +1,49 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>My homepage</title>
-	
-	<meta http-equiv="refresh" content="0; url=https://halvorson.github.io/basic-portfolio/" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael Halvorson</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<p><a href="https://halvorson.github.io/basic-portfolio/">Redirect</a></p>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Michael Halvorson</h1>
+      <p class="role">Product at Chime — experimentation, personalization, and incentives.</p>
+      <p class="bio">
+        I went through a full coding bootcamp years ago and never really stopped building.
+        These days that means leaning hard into AI-assisted development — at work, and
+        especially on the personal tools below — to go from idea to something running in
+        days instead of months.
+      </p>
+      <div class="links">
+        <a href="https://github.com/halvorson" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/michaelthalvorson/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </header>
+
+    <div class="disclaimer">
+      <strong>Heads up, these aren't products.</strong>
+      Almost everything below was built to solve one specific personal problem — a fussy
+      toddler, an injured dog, a cloudy sky, a lock I couldn't crack — not to become a
+      business or a polished app. Expect rough edges, dead links, and priorities that
+      shift when the actual problem does.
+    </div>
+
+    <h2 class="section-title">Pet Projects</h2>
+    <div class="projects" id="projects">
+      <p class="note">Loading…</p>
+    </div>
+
+    <h2 class="section-title">To-do</h2>
+    <ul class="todo-list" id="todo"></ul>
+
+    <footer>
+      &copy; 2026 Michael Halvorson
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
-
 </html>
