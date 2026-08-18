@@ -59,7 +59,7 @@
     {
       "id": "ask-the-stars",
       "name": "Ask the Stars",
-      "pitch": "Text an AI agent over satellite SMS from places with zero cell signal — no app, no bars required.",
+      "pitch": "Backcountry hiking and skiing puts you out of cell range right when you most want to check weather, fire, or trail conditions — this taps Apple's free satellite messaging to ask an AI agent directly, instead of hoping a friend is by their phone to relay the answer.",
       "status": "in-progress",
       "repo": {
         "url": "https://github.com/halvorson/ask-the-stars",
