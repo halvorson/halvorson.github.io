@@ -5,42 +5,51 @@ async function loadProjects() {
   const projectsEl = document.getElementById("projects");
   projectsEl.innerHTML = data.projects.map(renderCard).join("");
 
-  const todoEl = document.getElementById("todo");
-  todoEl.innerHTML = data.todo.map(renderTodo).join("");
+  const todoSection = document.getElementById("todo-section");
+  if (data.todo && data.todo.length) {
+    document.getElementById("todo").innerHTML = data.todo.map(renderTodo).join("");
+  } else {
+    todoSection.style.display = "none";
+  }
 }
 
 function renderCard(p) {
-  const statusLabel = p.status === "live" ? "Live" : "In progress";
-  const statusNote = p.status_note ? `<div class="note">${escapeHtml(p.status_note)}</div>` : "";
+  const isLive = p.status === "live";
+  const statusBadge = isLive
+    ? `<span class="status live">Live</span>`
+    : `<span class="status in-progress">In progress</span>`;
 
   let repoLink = "";
   if (p.repo) {
     const badge = p.repo.private ? `<span class="badge">private</span>` : "";
     repoLink = `<a href="${p.repo.url}" target="_blank" rel="noopener">Repo</a> ${badge}`;
+    if (p.repo.private_reason) {
+      repoLink += `<div class="note">${escapeHtml(p.repo.private_reason)}</div>`;
+    }
   } else if (p.repo_note) {
     repoLink = `<span class="note">${escapeHtml(p.repo_note)}</span>`;
   }
 
-  let liveLink = "";
+  let cta = "";
   if (p.live_url) {
-    liveLink = `<a href="${p.live_url}" target="_blank" rel="noopener">Live app</a>`;
+    cta = `<a class="cta" href="${p.live_url}" target="_blank" rel="noopener">Try it →</a>`;
   } else if (p.live_note) {
-    liveLink = `<span class="note">${escapeHtml(p.live_note)}</span>`;
+    cta = `<span class="note">${escapeHtml(p.live_note)}</span>`;
+  } else if (!isLive) {
+    cta = `<span class="note">Not live yet — check back soon.</span>`;
   }
 
   return `
     <div class="card">
       <div class="card-head">
         <h3>${escapeHtml(p.name)}</h3>
-        <span class="status ${p.status}">${statusLabel}</span>
+        ${statusBadge}
       </div>
-      <p class="problem">${escapeHtml(p.problem)}</p>
-      <p class="blurb">${escapeHtml(p.blurb)}</p>
+      <p class="pitch">${escapeHtml(p.pitch)}</p>
       <div class="meta">
+        ${cta}
         ${repoLink}
-        ${liveLink}
       </div>
-      ${statusNote}
     </div>
   `;
 }

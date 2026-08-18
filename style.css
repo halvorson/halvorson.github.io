@@ -130,31 +130,27 @@ h2.section-title {
 
 .status {
   font-size: 0.72rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
   white-space: nowrap;
 }
 
 .status.live { background: var(--accent-soft); color: var(--accent); }
-.status.in-progress { background: var(--tag-bg); color: var(--text-muted); }
 
-.card .problem {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin: 8px 0 6px;
+.status.in-progress {
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  border: 1px solid var(--warn-border);
+  font-size: 0.78rem;
+  padding: 4px 12px;
 }
 
-.card .problem::before {
-  content: "Problem: ";
-  font-weight: 600;
-  color: var(--text);
-}
-
-.card .blurb {
-  margin: 0 0 10px;
-  font-size: 0.95rem;
+.card .pitch {
+  margin: 10px 0 14px;
+  font-size: 0.98rem;
 }
 
 .card .meta {
@@ -171,6 +167,22 @@ h2.section-title {
 }
 
 .card .meta a:hover { text-decoration: underline; }
+
+.card .meta .cta {
+  background: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.card .meta .cta:hover { opacity: 0.88; }
+
+.card .meta .note {
+  width: 100%;
+  order: 3;
+}
 
 .badge {
   font-size: 0.72rem;

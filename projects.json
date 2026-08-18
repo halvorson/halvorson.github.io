@@ -4,8 +4,7 @@
     {
       "id": "teaching-toddlers-typing",
       "name": "Teaching Toddlers Typing",
-      "problem": "My toddler was learning letters but had no way to connect a letter on a keyboard to a letter on a screen — and every typing game I found punished wrong guesses, which just caused meltdowns.",
-      "blurb": "A dark, pearlescent typing game for toddlers: one big letter fills the screen, the child hunts for the matching physical key, and a muted celebration plays on success. Wrong keys get a soft flicker, never a penalty.",
+      "pitch": "A letter-matching keyboard game so my 2-year-old can \"work\" at a computer like everyone else in the house — press the matching key, no such thing as a wrong answer.",
       "status": "live",
       "repo": { "url": "https://github.com/halvorson/teaching-toddlers-typing", "private": false },
       "live_url": "https://halvorson.github.io/teaching-toddlers-typing/",
@@ -14,8 +13,7 @@
     {
       "id": "big-emotions",
       "name": "Big Emotions",
-      "problem": "In the actual meltdown moment with a two-year-old, I didn't have time to flip through five different parenting books to remember where they agreed or disagreed on what to do.",
-      "blurb": "An offline, single-file compare-and-contrast of five well-known parenting books, built for the moment things are already going sideways. An interactive section lets you pick a position on each disagreement and copy out a decision summary.",
+      "pitch": "Compares five parenting books side by side so we can decide whose philosophy we actually agree with — and know which one to read next.",
       "status": "live",
       "repo": { "url": "https://github.com/halvorson/big-emotions", "private": false },
       "live_url": "https://halvorson.github.io/big-emotions/",
@@ -24,18 +22,20 @@
     {
       "id": "bitlock",
       "name": "BitLock",
-      "problem": "I had a 10-button order-independent combination lock and no memory of the combination — 1,024 possibilities is too many to track by hand, especially with more than one person trying combos.",
-      "blurb": "A brute-force tracker for a 10-button combination lock. Shared state via Redis so multiple people can mark off attempted combinations from their own phones without duplicating work.",
+      "pitch": "Tracks which of 1,024 combinations we've tried on a 10-button lock I still haven't cracked, shared so every attempt counts.",
       "status": "live",
-      "repo": { "url": "https://github.com/halvorson/bitlock", "private": true },
+      "repo": {
+        "url": "https://github.com/halvorson/bitlock",
+        "private": true,
+        "private_reason": "Stays private — it holds our one shared memory of attempted combinations, and I'm still actively cracking the lock."
+      },
       "live_url": "https://bitlock.vercel.app",
       "tags": ["utility", "vercel"]
     },
     {
       "id": "bearings",
       "name": "Bearings",
-      "problem": "A group of us wanted to pinpoint something far away (a boat, a light, a sound) using nothing but our phones' compasses and GPS, without a rangefinder or a survey tool.",
-      "blurb": "A collaborative PWA: point your phone at a target, tap Record, and it combines bearings from multiple participants — using least-squares ray intersection — to triangulate the target's location on a map.",
+      "pitch": "Triangulates owls we hear in the Presidio woods on walks with my wife, by combining compass bearings from both our phones — also doubles as a \"which mountain is that\" and ski-chute finder.",
       "status": "live",
       "repo": { "url": "https://github.com/halvorson/bearings", "private": true },
       "live_url": "https://bearings-app-dev.web.app",
@@ -44,8 +44,7 @@
     {
       "id": "clear-skies-ahead",
       "name": "Clear Skies Ahead",
-      "problem": "Standing under clouds (or in the sun), I wanted a quick answer to \"how far do I need to go to change that\" without squinting at a weather map.",
-      "blurb": "A PWA that reads your GPS location and compass bearing, then searches outward using live NOAA weather data — binary-searching down to the nearest half-mile — to tell you exactly how far to the nearest clear sky or nearest clouds.",
+      "pitch": "The Presidio is foggier than the Mission or Marin — this points you the exact direction and distance to walk to get out of the gloom and into the sun.",
       "status": "live",
       "repo": { "url": "https://github.com/halvorson/clear-skies-ahead", "private": true },
       "live_url": "https://clear-skies-ahead.web.app",
@@ -54,21 +53,22 @@
     {
       "id": "ins-and-outs",
       "name": "Ins-and-Outs",
-      "problem": "Our dog Madgy was recovering from a procedure and needed pills and bathroom trips tracked closely — across multiple people in the house, from memory, was not working.",
-      "blurb": "A quick-tap tracker for a recovering dog's pills, pees, and poos, so anyone in the house can log a moment in a couple of taps and everyone can see the latest status.",
+      "pitch": "A quick-tap tracker for a recovering dog's pills, pees, and poos, so anyone in the house can log a moment in two taps.",
       "status": "live",
-      "repo": null,
-      "repo_note": "Built directly, no separate source repo to link.",
+      "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": true },
       "live_url": "https://ins-and-outs-2da2b.web.app",
       "tags": ["household", "firebase"]
     },
     {
       "id": "ask-the-stars",
       "name": "Ask the Stars",
-      "problem": "I wanted a way to reach an AI agent from places with no cell signal — backcountry trips, remote camping — where a normal app or chat client is useless.",
-      "blurb": "A personal AI agent reachable over satellite SMS, powered by Claude and Firebase. No app, no signal required — just a text message.",
+      "pitch": "Text an AI agent over satellite SMS from places with zero cell signal — no app, no bars required.",
       "status": "live",
-      "repo": { "url": "https://github.com/halvorson/ask-the-stars", "private": true },
+      "repo": {
+        "url": "https://github.com/halvorson/ask-the-stars",
+        "private": true,
+        "private_reason": "Stays private — it's wired to my personal Twilio account."
+      },
       "live_url": null,
       "live_note": "SMS-based — there's no web page to link to.",
       "tags": ["ai agent", "firebase", "sms"]
@@ -76,10 +76,8 @@
     {
       "id": "kindling",
       "name": "Kindling",
-      "problem": "Relationships need small, regular maintenance — check-ins, rituals, gestures — and those are exactly the things that quietly slip when life gets busy.",
-      "blurb": "A relationship-maintenance PWA for tracking the small habits that keep a relationship's spark alive.",
+      "pitch": "A relationship-maintenance app for keeping up with the small habits and check-ins that keep the spark alive.",
       "status": "in-progress",
-      "status_note": "Build stalled partway through — not deployed yet.",
       "repo": { "url": "https://github.com/halvorson/kindling", "private": true },
       "live_url": null,
       "tags": ["relationships", "firebase"]
@@ -87,20 +85,12 @@
     {
       "id": "spotter",
       "name": "Spotter",
-      "problem": "During races and outdoor events, great photos of you get scattered across dozens of strangers' phones and never make it back to you.",
-      "blurb": "Crowdsourced, geotagged photo sharing for races and outdoor activities — so photos taken near you during an event are easy to find afterward.",
+      "pitch": "Crowdsourced, geotagged photo sharing so the great race-day photos strangers took of you actually make it back to you.",
       "status": "in-progress",
-      "status_note": "Deploys are currently failing — not live at the moment.",
       "repo": { "url": "https://github.com/halvorson/spotter", "private": true },
       "live_url": null,
       "tags": ["outdoors", "firebase"]
     }
   ],
-  "todo": [
-    {
-      "id": "second-brain",
-      "name": "Second Brain",
-      "note": "A personal knowledge-management / \"second brain\" project. It lives entirely inside Chime's infrastructure because it's full of work-specific information, so it can't be published or linked here. Noting it as a to-do: figure out a way to describe it publicly without the sensitive parts, or link to a write-up instead of the project itself."
-    }
-  ]
+  "todo": []
 }
