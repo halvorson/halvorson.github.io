@@ -55,12 +55,23 @@ function renderCard(p) {
 
   const prefix = inProgress ? "[In Development] " : "";
 
-  return `
-    <article class="card" role="listitem">
+  const body = `
       <h3 class="card-title">${titleHtml}</h3>
       ${stackPills ? `<div class="stack">${stackPills}</div>` : ""}
       <p class="pitch">${escapeHtml(prefix)}${escapeHtml(p.pitch)}${githubLink}</p>
-    </article>
+  `;
+
+  if (p.screenshot) {
+    return `
+      <article class="card has-image" role="listitem">
+        <img class="card-image" src="${escapeHtml(p.screenshot)}" alt="${titleText} screenshot" loading="lazy">
+        <div class="card-body">${body}</div>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="card" role="listitem">${body}</article>
   `;
 }
 

@@ -8,6 +8,7 @@
       "status": "live",
       "theme": "outdoors",
       "stack": ["React", "Firestore", "Mapbox"],
+      "screenshot": "screenshots/bearings.jpg",
       "repo": { "url": "https://github.com/halvorson/bearings", "private": false },
       "live_url": "https://bearings-app-dev.web.app"
     },
@@ -83,6 +84,7 @@
       "status": "live",
       "theme": "household",
       "stack": ["React", "Firestore"],
+      "screenshot": "screenshots/ins-and-outs.jpg",
       "repo": { "url": "https://github.com/halvorson/madgy-ins-and-outs", "private": false },
       "live_url": "https://ins-and-outs-2da2b.web.app"
     },
