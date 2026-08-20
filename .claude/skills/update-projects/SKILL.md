@@ -30,6 +30,9 @@ Append an entry to the `projects` array in `projects.json` with this shape:
   "status": "live" | "in-development",
   "theme": "outdoors" | "parenting" | "household" | "relationships" | "utility",
   "stack": ["React", "Firestore", "..."],
+  "screenshot": "optional — relative path to an image in screenshots/, e.g.
+    'screenshots/bearings.jpg'. Renders full-width at the top of the card. Omit entirely
+    for a text-only card; there's no placeholder/fallback image.",
   "repo": {
     "url": "https://github.com/halvorson/...",
     "private": true|false,
@@ -73,6 +76,15 @@ Rules:
   used; `Vercel` when that's the host).
 - Set `repo.private: true` for private GitHub repos even when `repo_hidden` is also set —
   keep the data accurate regardless of what's currently shown on the page.
+- `screenshot` should show real, meaningful content, not an empty state — if a project has
+  no data in it yet, capture one after seeding it with a real session/entry rather than
+  screenshotting a blank UI. Crop tight to the relevant content (roughly 2:1 aspect ratio;
+  the card renders it at that ratio with `object-fit: cover`) instead of a full, mostly-empty
+  page — see `screenshots/bearings.jpg` and `screenshots/ins-and-outs.jpg` for the target
+  crop tightness. Compress before committing (~15–50KB each is the current range); this is a
+  static site with no image pipeline, so oversized files are a permanent page-weight cost.
+  Check with Michael before screenshotting anything that might expose data he wouldn't want
+  public (real household info, shared app state, etc).
 - **There are no "Live" / status badges anymore.** Instead, anything with
   `status: "in-development"` gets a plain `[In Development] ` text prefix automatically
   added to the front of the pitch — don't write that into `pitch` yourself, and don't add
